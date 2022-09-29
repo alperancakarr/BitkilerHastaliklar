@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BitkilerHastaliklarStajModelStoreContainer" CdmEntityContainer="BitkilerHastaliklarStajEntities2">
+    <EntitySetMapping Name="bitki">
+      <EntityTypeMapping TypeName="BitkilerHastaliklarStajModel.bitki">
+        <MappingFragment StoreEntitySet="bitki">
+          <ScalarProperty Name="bitki_id" ColumnName="bitki_id" />
+          <ScalarProperty Name="bitki_tr" ColumnName="bitki_tr" />
+          <ScalarProperty Name="bitki_latin" ColumnName="bitki_latin" />
+          <ScalarProperty Name="bitki_fotograf" ColumnName="bitki_fotograf" />
+          <ScalarProperty Name="bitki_detay" ColumnName="bitki_detay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hastalik">
+      <EntityTypeMapping TypeName="BitkilerHastaliklarStajModel.hastalik">
+        <MappingFragment StoreEntitySet="hastalik">
+          <ScalarProperty Name="hastalik_id" ColumnName="hastalik_id" />
+          <ScalarProperty Name="hastalik_tr" ColumnName="hastalik_tr" />
+          <ScalarProperty Name="hastalik_latin" ColumnName="hastalik_latin" />
+          <ScalarProperty Name="hastalik_tanim" ColumnName="hastalik_tanim" />
+          <ScalarProperty Name="hastalik_detay" ColumnName="hastalik_detay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanici">
+      <EntityTypeMapping TypeName="BitkilerHastaliklarStajModel.kullanici">
+        <MappingFragment StoreEntitySet="kullanici">
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="kullanici_adi" ColumnName="kullanici_adi" />
+          <ScalarProperty Name="kullanici_soyadi" ColumnName="kullanici_soyadi" />
+          <ScalarProperty Name="kullanici_mail" ColumnName="kullanici_mail" />
+          <ScalarProperty Name="kullanici_sifre" ColumnName="kullanici_sifre" />
+          <ScalarProperty Name="kullanici_yoneticilik" ColumnName="kullanici_yoneticilik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="recete">
+      <EntityTypeMapping TypeName="BitkilerHastaliklarStajModel.recete">
+        <MappingFragment StoreEntitySet="recete">
+          <ScalarProperty Name="recete_id" ColumnName="recete_id" />
+          <ScalarProperty Name="recete_hastalik_id" ColumnName="recete_hastalik_id" />
+          <ScalarProperty Name="recete_bitki_id" ColumnName="recete_bitki_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BitkilerHastaliklarStajModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="BitkilerHastaliklarStajModel.Store.bitkileri_getir" FunctionImportName="bitkileri_getir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BitkilerHastaliklarStajModel.bitkileri_getir_Result">
+          <ScalarProperty Name="bitki_tr" ColumnName="bitki_tr" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="BitkilerHastaliklarStajModel.Store.hastaliklari_getir" FunctionImportName="hastaliklari_getir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BitkilerHastaliklarStajModel.hastaliklari_getir_Result">
+          <ScalarProperty Name="hastalik_tr" ColumnName="hastalik_tr" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="BitkilerHastaliklarStajModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="BitkilerHastaliklarStajModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="BitkilerHastaliklarStajModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="BitkilerHastaliklarStajModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="BitkilerHastaliklarStajModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BitkilerHastaliklarStajModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BitkilerHastaliklarStajModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

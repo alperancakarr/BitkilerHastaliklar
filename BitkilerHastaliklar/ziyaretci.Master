@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ziyaretci.master.cs" Inherits="BitkilerHastaliklarStaj.ziyaretci" %>
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+  <title>Bitkiler ve Hastalıklar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+</head>
+   
+<body style="background-image:url(Resimler/bg.jpg);  background-size:cover">
+    
+    <nav class="navbar navbar-inverse" style="margin-left:10px; margin-right:10px; margin-top:5px; background-color:transparent;border-color:white    ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" style="color:white">Bitkiler ve Hastalıklar</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="ziyaretci_anasayfa.aspx" style="color:white">Anasayfa</a></li>
+          <li><a href="ziyaretci_bitkiler.aspx" style="color:white">Bitkiler</a></li>
+          <li><a href="ziyaretci_hastaliklar.aspx" style="color:white">Hastalıklar</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="uye_ol.aspx" style="color:white"><span class="glyphicon glyphicon-user"></span> Üye Ol</a></li>
+          <li><a href="giris.aspx" style="color:white"><span class="glyphicon glyphicon-log-in"></span> Giriş Yap</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container" >
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+      
+    </div>
+    
+</body>
+</html>

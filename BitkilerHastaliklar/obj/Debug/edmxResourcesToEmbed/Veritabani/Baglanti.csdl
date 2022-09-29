@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BitkilerHastaliklarStajModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="bitkileri_getir_Result">
+    <Property Name="bitki_tr" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="hastaliklari_getir_Result">
+    <Property Name="hastalik_tr" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="bitki">
+    <Key>
+      <PropertyRef Name="bitki_id" />
+    </Key>
+    <Property Name="bitki_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bitki_tr" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="bitki_latin" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="bitki_fotograf" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="bitki_detay" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="recete" Relationship="Self.FK_recete_bitki" FromRole="bitki" ToRole="recete" />
+  </EntityType>
+  <EntityType Name="hastalik">
+    <Key>
+      <PropertyRef Name="hastalik_id" />
+    </Key>
+    <Property Name="hastalik_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hastalik_tr" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hastalik_latin" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hastalik_tanim" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hastalik_detay" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="recete" Relationship="Self.FK_recete_hastalik" FromRole="hastalik" ToRole="recete" />
+  </EntityType>
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="kullanici_id" />
+    </Key>
+    <Property Name="kullanici_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullanici_adi" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kullanici_soyadi" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kullanici_mail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kullanici_sifre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kullanici_yoneticilik" Type="Int32" />
+  </EntityType>
+  <EntityType Name="recete">
+    <Key>
+      <PropertyRef Name="recete_id" />
+    </Key>
+    <Property Name="recete_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="recete_hastalik_id" Type="Int32" Nullable="false" />
+    <Property Name="recete_bitki_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="bitki" Relationship="Self.FK_recete_bitki" FromRole="recete" ToRole="bitki" />
+    <NavigationProperty Name="hastalik" Relationship="Self.FK_recete_hastalik" FromRole="recete" ToRole="hastalik" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_recete_bitki">
+    <End Role="bitki" Type="Self.bitki" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="recete" Type="Self.recete" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bitki">
+        <PropertyRef Name="bitki_id" />
+      </Principal>
+      <Dependent Role="recete">
+        <PropertyRef Name="recete_bitki_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_recete_hastalik">
+    <End Role="hastalik" Type="Self.hastalik" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="recete" Type="Self.recete" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hastalik">
+        <PropertyRef Name="hastalik_id" />
+      </Principal>
+      <Dependent Role="recete">
+        <PropertyRef Name="recete_hastalik_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BitkilerHastaliklarStajEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bitki" EntityType="Self.bitki" />
+    <EntitySet Name="hastalik" EntityType="Self.hastalik" />
+    <EntitySet Name="kullanici" EntityType="Self.kullanici" />
+    <EntitySet Name="recete" EntityType="Self.recete" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_recete_bitki" Association="Self.FK_recete_bitki">
+      <End Role="bitki" EntitySet="bitki" />
+      <End Role="recete" EntitySet="recete" />
+    </AssociationSet>
+    <AssociationSet Name="FK_recete_hastalik" Association="Self.FK_recete_hastalik">
+      <End Role="hastalik" EntitySet="hastalik" />
+      <End Role="recete" EntitySet="recete" />
+    </AssociationSet>
+    <FunctionImport Name="bitkileri_getir" IsComposable="true" ReturnType="Collection(BitkilerHastaliklarStajModel.bitkileri_getir_Result)">
+      <Parameter Name="p1" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="hastaliklari_getir" IsComposable="true" ReturnType="Collection(BitkilerHastaliklarStajModel.hastaliklari_getir_Result)">
+      <Parameter Name="p1" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,574 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1C52360D-606F-49F1-8AE6-FF2B43447031}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BitkilerHastaliklarStaj</RootNamespace>
+    <AssemblyName>BitkilerHastaliklarStaj</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44386</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bitki_ekle.aspx" />
+    <Content Include="bitki_guncelle.aspx" />
+    <Content Include="bitki_guncelle_teyit.aspx" />
+    <Content Include="bitki_sil.aspx" />
+    <Content Include="bitki_sil_teyit.aspx" />
+    <Content Include="giris.aspx" />
+    <Content Include="giris\css\bootstrap.min.css" />
+    <Content Include="giris\css\bootstrap\mixins\_border-radius.css" />
+    <Content Include="giris\css\bootstrap\mixins\_reset-text.css" />
+    <Content Include="giris\css\bootstrap\mixins\_screen-reader.css" />
+    <Content Include="giris\css\bootstrap\mixins\_text-hide.css" />
+    <Content Include="giris\css\bootstrap\mixins\_visibility.css" />
+    <Content Include="giris\css\bootstrap\utilities\_stretched-link.css" />
+    <Content Include="giris\css\bootstrap\_media.css" />
+    <Content Include="giris\css\style.css" />
+    <Content Include="giris\images\bg.jpg" />
+    <Content Include="giris\index.html" />
+    <Content Include="giris\js\bootstrap.min.js" />
+    <Content Include="giris\js\jquery.min.js" />
+    <Content Include="giris\js\main.js" />
+    <Content Include="giris\js\popper.js" />
+    <Content Include="hastalik_ekle.aspx" />
+    <Content Include="hastalik_guncelle.aspx" />
+    <Content Include="hastalik_guncelle_teyit.aspx" />
+    <Content Include="hastalik_sil.aspx" />
+    <Content Include="hastalik_sil_teyit.aspx" />
+    <Content Include="kullanici_ekle.aspx" />
+    <Content Include="kullanici_guncelle.aspx" />
+    <Content Include="kullanici_guncelle_teyit.aspx" />
+    <Content Include="kullanici_sil.aspx" />
+    <Content Include="kullanici_sil_teyit.aspx" />
+    <Content Include="recete_ekle.aspx" />
+    <Content Include="recete_sil.aspx" />
+    <Content Include="recete_sil_teyit.aspx" />
+    <Content Include="Resimler\arkaplan.png" />
+    <Content Include="Resimler\bg.jpg" />
+    <Content Include="Resimler\bitki.png" />
+    <Content Include="uyelik_anasayfa.aspx" />
+    <Content Include="uyelik_bitkiler.aspx" />
+    <Content Include="uyelik_bitki_detay.aspx" />
+    <Content Include="uyelik_hastaliklar.aspx" />
+    <Content Include="uyelik_hastalik_detay.aspx" />
+    <Content Include="uye_ol.aspx" />
+    <Content Include="Veritabani\Baglanti.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Baglanti.edmx</DependentUpon>
+      <LastGenOutput>Baglanti.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Veritabani\Baglanti.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Baglanti.edmx</DependentUpon>
+      <LastGenOutput>Baglanti.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="yonetici_anasayfa.aspx" />
+    <Content Include="ziyaretci_anasayfa.aspx" />
+    <Content Include="ziyaretci_bitkiler.aspx" />
+    <Content Include="ziyaretci_bitki_detay.aspx" />
+    <Content Include="ziyaretci_hastaliklar.aspx" />
+    <Content Include="ziyaretci_hastalik_detay.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bitki_ekle.aspx.cs">
+      <DependentUpon>bitki_ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bitki_ekle.aspx.designer.cs">
+      <DependentUpon>bitki_ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bitki_guncelle.aspx.cs">
+      <DependentUpon>bitki_guncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bitki_guncelle.aspx.designer.cs">
+      <DependentUpon>bitki_guncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bitki_guncelle_teyit.aspx.cs">
+      <DependentUpon>bitki_guncelle_teyit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bitki_guncelle_teyit.aspx.designer.cs">
+      <DependentUpon>bitki_guncelle_teyit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bitki_sil.aspx.cs">
+      <DependentUpon>bitki_sil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bitki_sil.aspx.designer.cs">
+      <DependentUpon>bitki_sil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bitki_sil_teyit.aspx.cs">
+      <DependentUpon>bitki_sil_teyit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bitki_sil_teyit.aspx.designer.cs">
+      <DependentUpon>bitki_sil_teyit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="giris.aspx.cs">
+      <DependentUpon>giris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="giris.aspx.designer.cs">
+      <DependentUpon>giris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hastalik_ekle.aspx.cs">
+      <DependentUpon>hastalik_ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hastalik_ekle.aspx.designer.cs">
+      <DependentUpon>hastalik_ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hastalik_guncelle.aspx.cs">
+      <DependentUpon>hastalik_guncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hastalik_guncelle.aspx.designer.cs">
+      <DependentUpon>hastalik_guncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hastalik_guncelle_teyit.aspx.cs">
+      <DependentUpon>hastalik_guncelle_teyit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hastalik_guncelle_teyit.aspx.designer.cs">
+      <DependentUpon>hastalik_guncelle_teyit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hastalik_sil.aspx.cs">
+      <DependentUpon>hastalik_sil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hastalik_sil.aspx.designer.cs">
+      <DependentUpon>hastalik_sil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hastalik_sil_teyit.aspx.cs">
+      <DependentUpon>hastalik_sil_teyit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hastalik_sil_teyit.aspx.designer.cs">
+      <DependentUpon>hastalik_sil_teyit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kullanici_ekle.aspx.cs">
+      <DependentUpon>kullanici_ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kullanici_ekle.aspx.designer.cs">
+      <DependentUpon>kullanici_ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kullanici_guncelle.aspx.cs">
+      <DependentUpon>kullanici_guncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kullanici_guncelle.aspx.designer.cs">
+      <DependentUpon>kullanici_guncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kullanici_guncelle_teyit.aspx.cs">
+      <DependentUpon>kullanici_guncelle_teyit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kullanici_guncelle_teyit.aspx.designer.cs">
+      <DependentUpon>kullanici_guncelle_teyit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kullanici_sil.aspx.cs">
+      <DependentUpon>kullanici_sil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kullanici_sil.aspx.designer.cs">
+      <DependentUpon>kullanici_sil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kullanici_sil_teyit.aspx.cs">
+      <DependentUpon>kullanici_sil_teyit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kullanici_sil_teyit.aspx.designer.cs">
+      <DependentUpon>kullanici_sil_teyit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recete_ekle.aspx.cs">
+      <DependentUpon>recete_ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recete_ekle.aspx.designer.cs">
+      <DependentUpon>recete_ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recete_sil.aspx.cs">
+      <DependentUpon>recete_sil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recete_sil.aspx.designer.cs">
+      <DependentUpon>recete_sil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recete_sil_teyit.aspx.cs">
+      <DependentUpon>recete_sil_teyit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recete_sil_teyit.aspx.designer.cs">
+      <DependentUpon>recete_sil_teyit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uyelik.Master.cs">
+      <DependentUpon>uyelik.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uyelik.Master.designer.cs">
+      <DependentUpon>uyelik.Master</DependentUpon>
+    </Compile>
+    <Compile Include="uyelik_anasayfa.aspx.cs">
+      <DependentUpon>uyelik_anasayfa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uyelik_anasayfa.aspx.designer.cs">
+      <DependentUpon>uyelik_anasayfa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uyelik_bitkiler.aspx.cs">
+      <DependentUpon>uyelik_bitkiler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uyelik_bitkiler.aspx.designer.cs">
+      <DependentUpon>uyelik_bitkiler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uyelik_bitki_detay.aspx.cs">
+      <DependentUpon>uyelik_bitki_detay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uyelik_bitki_detay.aspx.designer.cs">
+      <DependentUpon>uyelik_bitki_detay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uyelik_hastaliklar.aspx.cs">
+      <DependentUpon>uyelik_hastaliklar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uyelik_hastaliklar.aspx.designer.cs">
+      <DependentUpon>uyelik_hastaliklar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uyelik_hastalik_detay.aspx.cs">
+      <DependentUpon>uyelik_hastalik_detay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uyelik_hastalik_detay.aspx.designer.cs">
+      <DependentUpon>uyelik_hastalik_detay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uye_ol.aspx.cs">
+      <DependentUpon>uye_ol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uye_ol.aspx.designer.cs">
+      <DependentUpon>uye_ol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Baglanti.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Baglanti.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Baglanti.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Baglanti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Baglanti.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Baglanti.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\bitki.cs">
+      <DependentUpon>Baglanti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\bitkileri_getir_Result.cs">
+      <DependentUpon>Baglanti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\hastalik.cs">
+      <DependentUpon>Baglanti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\hastaliklari_getir_Result.cs">
+      <DependentUpon>Baglanti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\kullanici.cs">
+      <DependentUpon>Baglanti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\recete.cs">
+      <DependentUpon>Baglanti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\sysdiagrams.cs">
+      <DependentUpon>Baglanti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici.Master.cs">
+      <DependentUpon>yonetici.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici.Master.designer.cs">
+      <DependentUpon>yonetici.Master</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_anasayfa.aspx.cs">
+      <DependentUpon>yonetici_anasayfa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_anasayfa.aspx.designer.cs">
+      <DependentUpon>yonetici_anasayfa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ziyaretci.Master.cs">
+      <DependentUpon>ziyaretci.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ziyaretci.Master.designer.cs">
+      <DependentUpon>ziyaretci.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ziyaretci_anasayfa.aspx.cs">
+      <DependentUpon>ziyaretci_anasayfa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ziyaretci_anasayfa.aspx.designer.cs">
+      <DependentUpon>ziyaretci_anasayfa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ziyaretci_bitkiler.aspx.cs">
+      <DependentUpon>ziyaretci_bitkiler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ziyaretci_bitkiler.aspx.designer.cs">
+      <DependentUpon>ziyaretci_bitkiler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ziyaretci_bitki_detay.aspx.cs">
+      <DependentUpon>ziyaretci_bitki_detay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ziyaretci_bitki_detay.aspx.designer.cs">
+      <DependentUpon>ziyaretci_bitki_detay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ziyaretci_hastaliklar.aspx.cs">
+      <DependentUpon>ziyaretci_hastaliklar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ziyaretci_hastaliklar.aspx.designer.cs">
+      <DependentUpon>ziyaretci_hastaliklar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ziyaretci_hastalik_detay.aspx.cs">
+      <DependentUpon>ziyaretci_hastalik_detay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ziyaretci_hastalik_detay.aspx.designer.cs">
+      <DependentUpon>ziyaretci_hastalik_detay.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="giris\.DS_Store" />
+    <Content Include="giris\css\.DS_Store" />
+    <Content Include="giris\css\bootstrap\.DS_Store" />
+    <Content Include="giris\css\bootstrap\mixins\.DS_Store" />
+    <Content Include="giris\fonts\.DS_Store" />
+    <Content Include="giris\images\.DS_Store" />
+    <Content Include="giris\js\.DS_Store" />
+    <Content Include="giris\scss\.DS_Store" />
+    <Content Include="giris\scss\bootstrap\.DS_Store" />
+    <Content Include="giris\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="giris\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="giris\scss\bootstrap\bootstrap.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="giris\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_overflow.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_stretched-link.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="giris\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="giris\scss\bootstrap\vendor\_rfs.scss" />
+    <Content Include="giris\scss\bootstrap\_alert.scss" />
+    <Content Include="giris\scss\bootstrap\_badge.scss" />
+    <Content Include="giris\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="giris\scss\bootstrap\_button-group.scss" />
+    <Content Include="giris\scss\bootstrap\_buttons.scss" />
+    <Content Include="giris\scss\bootstrap\_card.scss" />
+    <Content Include="giris\scss\bootstrap\_carousel.scss" />
+    <Content Include="giris\scss\bootstrap\_close.scss" />
+    <Content Include="giris\scss\bootstrap\_code.scss" />
+    <Content Include="giris\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="giris\scss\bootstrap\_dropdown.scss" />
+    <Content Include="giris\scss\bootstrap\_forms.scss" />
+    <Content Include="giris\scss\bootstrap\_functions.scss" />
+    <Content Include="giris\scss\bootstrap\_grid.scss" />
+    <Content Include="giris\scss\bootstrap\_images.scss" />
+    <Content Include="giris\scss\bootstrap\_input-group.scss" />
+    <Content Include="giris\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="giris\scss\bootstrap\_list-group.scss" />
+    <Content Include="giris\scss\bootstrap\_media.scss" />
+    <Content Include="giris\scss\bootstrap\_mixins.scss" />
+    <Content Include="giris\scss\bootstrap\_modal.scss" />
+    <Content Include="giris\scss\bootstrap\_nav.scss" />
+    <Content Include="giris\scss\bootstrap\_navbar.scss" />
+    <Content Include="giris\scss\bootstrap\_pagination.scss" />
+    <Content Include="giris\scss\bootstrap\_popover.scss" />
+    <Content Include="giris\scss\bootstrap\_print.scss" />
+    <Content Include="giris\scss\bootstrap\_progress.scss" />
+    <Content Include="giris\scss\bootstrap\_reboot.scss" />
+    <Content Include="giris\scss\bootstrap\_root.scss" />
+    <Content Include="giris\scss\bootstrap\_spinners.scss" />
+    <Content Include="giris\scss\bootstrap\_tables.scss" />
+    <Content Include="giris\scss\bootstrap\_toasts.scss" />
+    <Content Include="giris\scss\bootstrap\_tooltip.scss" />
+    <Content Include="giris\scss\bootstrap\_transitions.scss" />
+    <Content Include="giris\scss\bootstrap\_type.scss" />
+    <Content Include="giris\scss\bootstrap\_utilities.scss" />
+    <Content Include="giris\scss\bootstrap\_variables.scss" />
+    <Content Include="giris\scss\style.scss" />
+    <None Include="packages.config" />
+    <Content Include="uyelik.Master" />
+    <EntityDeploy Include="Veritabani\Baglanti.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Baglanti.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Veritabani\Baglanti.edmx.diagram">
+      <DependentUpon>Baglanti.edmx</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="ziyaretci.Master" />
+    <Content Include="yonetici.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50946</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44386/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
